@@ -17,7 +17,11 @@ import java.util.Optional;
     public class TaskController {
         @Autowired
         TaskRepository taskRepository;
-        @GetMapping("/task")
+
+    public TaskController(TaskRepository taskRepository) {
+    }
+
+    @GetMapping("/task")
 
 
         @Operation(summary = "Lista todas as tarefas da lista")
