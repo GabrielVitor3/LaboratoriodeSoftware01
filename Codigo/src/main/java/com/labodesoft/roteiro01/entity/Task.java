@@ -78,7 +78,7 @@ public class Task {
                     return daysLate + " dia" + (daysLate != 1 ? "s" : "") + " de atraso";
                 }
             }
-        } else { // Livre
+        } else {
             return completed ? "Concluída" : "Prevista";
         }
     }
