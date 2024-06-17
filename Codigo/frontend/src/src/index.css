@@ -1,11 +1,11 @@
 /* Estilos Globais */
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
-    /* Fundo cinza claro */
-    color: #333333;
-    /* Texto cinza escuro */
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #e0e5ec;
+    /* Fundo azul claro */
+    color: #2c3e50;
+    /* Texto azul escuro */
     margin: 0;
     padding: 0;
     display: flex;
@@ -15,59 +15,62 @@ body {
 }
 
 .App {
-    width: 80%;
-    max-width: 800px;
+    width: 90%;
+    max-width: 900px;
     background-color: #ffffff;
     /* Fundo branco */
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     /* Sombra mais suave */
     overflow: hidden;
-    padding: 40px;
+    padding: 50px;
     /* Maior padding para espaçamento interno */
 }
-
 
 /* TodoWrapper Styles */
 
 .todo-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .pending-tasks,
 .completed-tasks {
-    width: 45%;
+    width: 48%;
 }
 
 h2 {
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 2px solid #bdc3c7;
     /* Linha de separação cinza */
-    padding-bottom: 10px;
-    margin-bottom: 30px;
+    padding-bottom: 15px;
+    margin-bottom: 40px;
     /* Maior margem inferior */
+    color: #34495e;
+    /* Texto azul escuro */
+    font-size: 24px;
 }
-
 
 /* Botões */
 
 button {
-    background-color: #007bff;
+    background-color: #3498db;
     /* Fundo azul */
-    color: #ffffff;
+    color: #ecf0f1;
     /* Texto branco */
     border: none;
-    padding: 15px;
+    padding: 10px 20px;
     /* Maior padding para botões maiores */
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 25px;
     /* Bordas arredondadas */
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #2980b9;
     /* Azul escuro ao passar o mouse */
+    transform: scale(1.05);
+    /* Leve aumento ao passar o mouse */
 }
 
 button:focus {
@@ -75,34 +78,33 @@ button:focus {
 }
 
 button.delete {
-    background-color: #dc3545;
+    background-color: #e74c3c;
     /* Fundo vermelho */
     color: #ffffff;
     /* Texto branco */
     margin-left: 10px;
-    border-radius: 5px;
+    border-radius: 25px;
     /* Bordas arredondadas */
 }
 
 button.delete:hover {
-    background-color: #c82333;
+    background-color: #c0392b;
     /* Vermelho escuro ao passar o mouse */
 }
 
 button.complete {
-    background-color: #28a745;
+    background-color: #2ecc71;
     /* Fundo verde */
     color: #ffffff;
     /* Texto branco */
-    border-radius: 5px;
+    border-radius: 25px;
     /* Bordas arredondadas */
 }
 
 button.complete:hover {
-    background-color: #218838;
+    background-color: #27ae60;
     /* Verde escuro ao passar o mouse */
 }
-
 
 /* Task Styles */
 
@@ -110,74 +112,86 @@ button.complete:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f8f9fa;
+    background-color: #ecf0f1;
     /* Fundo cinza mais claro */
     padding: 20px;
     /* Maior padding para tarefas maiores */
-    border-radius: 5px;
-    margin-bottom: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
     /* Maior margem inferior */
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     flex-wrap: wrap;
     /* Permitir que os elementos sejam quebrados em várias linhas se necessário */
+}
+
+.task:hover {
+    background-color: #bdc3c7;
+    /* Cinza mais escuro ao passar o mouse */
+    transform: scale(1.02);
+    /* Leve aumento ao passar o mouse */
 }
 
 .task span {
     flex: 1;
     margin-right: 10px;
+    font-size: 18px;
+    /* Tamanho da fonte maior */
 }
 
+.task.completed {
+    background-color: #2ecc71;
+    /* Verde para completadas */
+    text-decoration: line-through;
+    color: #ffffff;
+    /* Texto branco */
+}
 
 /* Ajuste dos botões dentro das tarefas */
 
 .task-buttons {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     /* Maior espaçamento entre os botões */
 }
-
-.task.completed {
-    background-color: #28a745;
-    /* Verde para completadas */
-    text-decoration: line-through;
-}
-
 
 /* TaskForm Styles */
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     /* Maior gap para mais espaçamento */
-    padding: 30px;
+    padding: 20px;
     /* Maior padding para espaçamento interno */
+    background-color: #f8f9fa;
+    border-radius: 10px;
 }
 
 label {
     display: flex;
     flex-direction: column;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     /* Maior espaçamento entre labels */
+    color: #2c3e50;
+    font-size: 16px;
 }
 
 input[type="text"],
 input[type="date"],
 input[type="number"],
 select {
-    padding: 10px;
-    border: 1px solid #000000;
-    /* Borda preta */
-    border-radius: 5px;
-    background-color: #f8f9fa;
+    padding: 15px;
+    border: 1px solid #bdc3c7;
+    /* Borda cinza */
+    border-radius: 10px;
+    background-color: #ecf0f1;
     /* Fundo cinza mais claro */
-    color: #333333;
+    color: #2c3e50;
     /* Texto cinza escuro */
     font-size: 16px;
     /* Tamanho da fonte maior */
 }
-
 
 /* Remove o seta do input date no Firefox */
 
@@ -185,7 +199,6 @@ input[type="date"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     display: none;
 }
-
 
 /* Remove o seta do input date no Chrome e Safari */
 
@@ -201,7 +214,7 @@ input[type="date"]:focus,
 input[type="number"]:focus,
 select:focus {
     outline: none;
-    border: 1px solid #007bff;
+    border: 1px solid #3498db;
     /* Borda azul */
 }
 
@@ -210,17 +223,17 @@ form button {
 }
 
 form button[type="submit"] {
-    background-color: #007bff;
+    background-color: #3498db;
     /* Fundo azul */
     color: #ffffff;
     /* Texto branco */
     padding: 15px 30px;
     /* Maior padding para botão maior */
-    border-radius: 5px;
+    border-radius: 25px;
     /* Bordas arredondadas */
 }
 
 form button[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #2980b9;
     /* Azul escuro ao passar o mouse */
 }
